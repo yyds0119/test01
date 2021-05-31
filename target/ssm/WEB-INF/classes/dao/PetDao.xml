@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--指定约束文件 ->mybatis-3-mapper.dtd 用来验证出现的标签和属性是正确的-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 是当前文件的根标签  namespace 是命名空间 值写要使用的dao接口全限定名 -->
+<mapper namespace="dao.PetDao">
+    <select id="queryPetAll" resultType="entity.Pet">
+        select id,`type`,`name`, age, love from dog
+    </select>
+    <insert id="ins">
+        INSERT INTO db.dog (id, TYPE, NAME, age, love)
+        VALUES (#{id}, #{type}, #{name}, #{age}, #{love})
+    </insert>
+</mapper>
